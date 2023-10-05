@@ -20,7 +20,10 @@ const Table = () => {
   const fetchApps = async () => {
     try {
       const data = await getApps({ pageNumber: pageNumber, pageSize: itemsLength });
-      setTableData(data);
+      setTableData((prevData) => ({
+        ...data,
+        appRows: [...(prevData?.appRows || []), ...data.appRows],
+      }));
     } catch (error) {
       console.error("Failed to fetch apps:", error);
     }
@@ -75,6 +78,21 @@ const Table = () => {
       console.error("Failed to get app overview:", error);
     }
   };
+
+  const infinityScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight
+    )
+      return;
+      setPageNumber((prev) => prev + 1);
+  };  
+
+  useEffect(() => {
+    window.addEventListener("scroll", infinityScroll);
+    return () => {
+      window.removeEventListener("scroll", infinityScroll);
+    };
+  }, []);
 
   return (
     <div>{tableData && Array.isArray(tableData?.appRows) && tableData?.appRows?.length > 0 &&

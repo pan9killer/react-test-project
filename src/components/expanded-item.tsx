@@ -9,8 +9,6 @@ interface ExpandItem {
 }
 
 export const ExpandableItem = ({ setExpandItem, item, users }:ExpandItem) => {
-  console.log(users)
-
   const closeItem = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     setExpandItem(false);
