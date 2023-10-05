@@ -1,0 +1,103 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.table-item, .table-item-sort {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  cursor: default;
+}
+
+.table-item-sort > span {
+  cursor: pointer;
+}
+
+span {
+  text-align: start;
+  width: 30%;
+  font-size: 14px;
+}
+
+h6 {
+  text-align: start;
+}
+
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 10;
+  padding-left: 20px;
+}
+
+.close {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.close-btn {
+  margin: 20px 20px 10px auto;
+}
+
+.header-expand > h6 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-expand {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.header-expand > span {
+  width: 100%;
+}
+
+.expand-data {
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  background-color: #e6e6e6;
+  border: 1px solid rgb(70, 70, 197);
+  border-radius: 5px;
+}
+
+.users-data {
+  margin-top: 20px;
+  display: flex;
+  width: 93%;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+}
+.users-data > span {
+  width: 97%;
+  padding: 10px;
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.users-data > span:last-child {
+  border-bottom: none;
+}
